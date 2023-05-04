@@ -57,4 +57,7 @@ const doSomethingToAbdul = function (doSomething) {
   doSomething("Abdul");
 };
 
+// Function call: sayGoodMorning, the result
+// Function reference: sayGoodMorning the variable
+
 doSomethingToAbdul(sayGoodMorning);
