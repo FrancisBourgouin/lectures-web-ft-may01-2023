@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  background: #333;
+  padding: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+form {
+  margin: 2em auto;
+  font-size: 20px;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form button {
+  font-size: 2em;
+}
