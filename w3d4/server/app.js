@@ -1,10 +1,14 @@
+require("dotenv").config();
 const express = require("express"); // Requires Express Framework (Routing / Server)
 const path = require("path"); // Requires Path (Multiple OS path support)
 const logger = require("morgan"); // Require Morgan (Logs the requests received)
 const cookieParser = require("cookie-parser"); // Require Cookie Parser (Parse string to cookie)
 const cookieSession = require("cookie-session");
-const bcrypt = require("bcryptjs");
-const salt = bcrypt.genSaltSync(10);
+const {
+  userDatabaseIsh,
+  fetchUserByEmail,
+  authenticateUser,
+} = require("./data/userData");
 
 const app = express(); // Create an express server and reference with app
 // view engine setup
@@ -24,60 +28,24 @@ app.use(
   })
 );
 
-const user1 = {
-  name: "Dimitri Ivanovich Mendeleiv",
-  email: "periodic@table.com",
-  password: bcrypt.hashSync("hydrogen", salt),
-  secret: "Actually prefers biology over chemistry",
-};
+// What's the answer to the most existential question?
+// 42
 
-const user2 = {
-  name: "Doug Judy",
-  email: "pontiac@bandit.com",
-  password: bcrypt.hashSync("rosa", salt),
-  secret: "Doesn't actually drive stick",
-};
+app.use((req, res, next) => {
+  const { email } = req.session;
+  const { err } = fetchUserByEmail(email);
+  const whiteList = ["/", "/login"];
 
-const userDatabaseIsh = {
-  "periodic@table.com": user1,
-  "pontiac@bandit.com": user2,
-};
-
-// find the user, check the password and then return the user obj!
-// If it goes wrong, we want to know why
-// {err:"", user:""}
-const authenticateUser = (email, password) => {
-  const currentUser = userDatabaseIsh[email];
-
-  if (!currentUser) {
-    // Eject clauses
-    return { err: "No valid user :(", user: null };
+  if (err && !whiteList.includes(req.url)) {
+    console.log(err);
+    return res.redirect("/");
   }
 
-  if (currentUser.password !== password) {
-    // Eject clauses
-    return { err: "Password invalid :(", user: null };
-  }
-
-  return { err: null, user: currentUser };
-};
-
-const fetchUserByEmail = (email) => {
-  const currentUser = userDatabaseIsh[email];
-
-  if (!currentUser) {
-    return { err: "Invalid email", user: null };
-  }
-
-  return { err: null, user: currentUser };
-};
+  return next();
+});
 
 app.get("/", (req, res) => {
   return res.render("index");
-});
-
-app.get("/api/users", (req, res) => {
-  res.json(userDatabaseIsh);
 });
 
 app.get("/something/:some_params"); // some_params will be a key in req.params
@@ -100,16 +68,13 @@ app.post("/login", (req, res) => {
   return res.redirect("/secret");
 });
 
-app.get("/secret", (req, res) => {
-  // const email = req.cookies.email
-  // const { email } = req.cookies;
-  const { email } = req.session;
-  const { err, user } = fetchUserByEmail(email);
+app.get("/api/users", (req, res) => {
+  return res.json(userDatabaseIsh);
+});
 
-  if (err) {
-    console.log(err);
-    return res.redirect("/");
-  }
+app.get("/secret", (req, res) => {
+  const { email } = req.session;
+  const { user } = fetchUserByEmail(email);
 
   const templateVars = { user };
 
