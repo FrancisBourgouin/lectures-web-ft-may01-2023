@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CSS Selectors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      main article h1 {
+        font-family: "Helvetica";
+        color: #b0b;
+      }
+      body h1 {
+        font-family: "Comic Sans MS";
+      }
+
+      .sponsored {
+        background-color: yellow;
+        border: 2px solid orange;
+      }
+
+      .danger {
+        color: red;
+      }
+
+      article h1.danger {
+        text-decoration: underline;
+      }
+
+      article {
+        transition: background-color 300ms;
+      }
+
+      article:hover {
+        background: #c0ffee;
+      }
+
+      article:nth-of-type(2n) {
+        color: blue;
+      }
+
+      /* Target by tag name : header or body  */
+      /* Target by class name : .sponsored */
+      /* Combine class + tag : h1.danger */
+
+      /* Id : #name-of-id */
+
+      /* Pseudo classes */
+    </style>
+  </head>
+  <body>
+    <header class="danger">
+      <h1>Super Header about CSS selectors!</h1>
+    </header>
+    <main>
+      <h1>A lot of posts</h1>
+      <article class="sponsored">
+        <h1 class="danger">I'm a post!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nemo magnam
+          neque rem ex qui veritatis eum? Beatae, dolorem sint facilis temporibus,
+          assumenda incidunt similique doloremque ut quos minus harum?
+        </p>
+      </article>
+      <article>
+        <h1 class="danger">I'm a post!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nemo magnam
+          neque rem ex qui veritatis eum? Beatae, dolorem sint facilis temporibus,
+          assumenda incidunt similique doloremque ut quos minus harum?
+        </p>
+      </article>
+      <article>
+        <h1 class="danger">I'm a post!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nemo magnam
+          neque rem ex qui veritatis eum? Beatae, dolorem sint facilis temporibus,
+          assumenda incidunt similique doloremque ut quos minus harum?
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

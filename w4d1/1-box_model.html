@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Box Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <style>
+    span {
+      font-size: 60px;
+    }
+
+    header {
+      background: #c0ffee;
+
+      padding: 30px;
+    }
+
+    .box {
+      display: inline-block;
+      box-sizing: border-box;
+      background: brown;
+
+      /* width: 200px;
+      height: 200px; */
+
+      padding: 20px;
+
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      padding: 20px 70px;
+      padding: 40px 60px 20px;
+      padding: 10px 20px 30px 40px;
+
+      border: 10px solid #d5d5bc;
+
+      margin: 20px;
+    }
+    /* 
+    const bob = {a:1, a:2}
+    {a:2} */
+  </style>
+
+  <body>
+    <header>
+      <h1>Party of boxes</h1>
+      <h2>Shipping coffee since 15 minutes ago</h2>
+    </header>
+    <div class="box">
+      <span class="coffee">☕</span>
+    </div>
+    <div class="box">
+      <span class="coffee">☕</span>
+    </div>
+  </body>
+</html>
