@@ -1,0 +1,17 @@
+main article {
+  margin: 2em;
+  padding: 2em;
+  border: 2em solid #bada55;
+  background-color: white;
+}
+main article:hover {
+  background-color: #fbfb00;
+}
+main article h1 {
+  color: blue;
+}
+main article p {
+  color: #bada55;
+}
+
+/*# sourceMappingURL=sass.css.map */

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>VH / VW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        /* height: 200vh; */
+        min-height: 100vh;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      div.modal {
+        padding: 1em;
+        background: #c0ffee;
+        border: 1em solid #b0b;
+
+        width: 35vmin;
+        height: 35vmin;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <h1>Do you want to take a break?</h1>
+      <button>Yes</button>
+      <button>No</button>
+      <button>Later</button>
+    </div>
+  </body>
+</html>

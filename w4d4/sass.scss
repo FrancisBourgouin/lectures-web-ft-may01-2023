@@ -1,0 +1,22 @@
+$primary-color: blue;
+$secondary-color: #bada55;
+$primary-background: white;
+$secondary-background: #ffff00;
+
+main article {
+  margin: 2em;
+  padding: 2em;
+  border: 2em solid $secondary-color;
+  background-color: $primary-background;
+
+  &:hover {
+    background-color: darken($secondary-background, 0.7);
+  }
+
+  h1 {
+    color: $primary-color;
+  }
+  p {
+    color: $secondary-color;
+  }
+}

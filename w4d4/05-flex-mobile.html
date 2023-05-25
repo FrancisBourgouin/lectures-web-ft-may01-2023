@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+
+      section {
+        padding: 1em;
+        gap: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      article {
+        box-sizing: border-box;
+        background: #c0ffee;
+        padding: 1em;
+        width: 100%;
+      }
+      article p {
+        font-size: 1.5em;
+      }
+      article img {
+        /* min-width: 300px; */
+        width: 100%;
+        /* max-width: 800px; */
+      }
+
+      @media screen and (min-width: 800px) {
+        article {
+          width: 45%;
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        article {
+          width: 30%;
+        }
+      }
+
+      /* Desktop First */
+      /* Default styling is for desktop */
+
+      /* max-width (up to the size) */
+      /* min-width (starting from the size) */
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <img src="images/20220131174506_1.jpg" alt="" />
+        <p>An image!</p>
+      </article>
+      <article>
+        <img src="images/20220131221341_1.jpg" alt="" />
+        <p>An image!</p>
+      </article>
+      <article>
+        <img src="images/20220201000857_1.jpg" alt="" />
+        <p>An image!</p>
+      </article>
+      <article>
+        <img src="images/20220202213814_1.jpg" alt="" />
+        <p>An image!</p>
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Units!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <style>
+      /* Units: px, %, em, rem, cm, vw, vh */
+
+      /* Why px is bad(ish): Static unit, not responsive */
+      /* pixel is bad for dimension, but good for boundaries */
+
+      p {
+        min-width: 300px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      /* em / rem => Element multiplier, Root element multipler */
+
+      body {
+        font-size: 30px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      h3 {
+        font-size: 1.25em;
+      }
+
+      button {
+        font-size: 1em;
+        padding: 0.25em 0.5em;
+        border: 0.1em solid black;
+      }
+      article {
+        /* font-size: 0.5em; */
+      }
+      p {
+        max-width: 80ch;
+      }
+
+      /* VW / VH (VMIN / VMAX) */
+      /* Viewport */
+    </style>
+    <section>
+      <h1>H1 title</h1>
+      <h2>H2 Title</h2>
+      <h3>H3 Title</h3>
+      <p>Some paragraph</p>
+      <strong>Some strong</strong>
+      <em>Some emphasis</em>
+      <button>Cool button</button>
+    </section>
+    <section>
+      <h1>Bunch of articles</h1>
+      <article>
+        <header>
+          <h1>Some Article</h1>
+          <h2>Some tag line</h2>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores illo neque
+          suscipit omnis nemo recusandae ipsa, vel incidunt laudantium molestiae,
+          reiciendis repellendus sint in voluptates odio fuga nostrum nulla quos!
+        </p>
+      </article>
+      <article>
+        <header>
+          <h1>Some Article</h1>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores illo neque
+          suscipit omnis nemo recusandae ipsa, vel incidunt laudantium molestiae,
+          reiciendis repellendus sint in voluptates odio fuga nostrum nulla quos!
+        </p>
+      </article>
+    </section>
+  </body>
+</html>
