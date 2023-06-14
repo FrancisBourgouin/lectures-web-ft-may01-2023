@@ -22,6 +22,11 @@ const plants = {
   1: plant,
   2: plant,
 };
+
+const plants = [plant, plant];
+
+// Array of objects  => Order matters, kinda slow to access one object, easy to iterate over all of it
+// Object of objects => Order doesn't matter, easy to access a specific object, harder to iterate over all of it
 ```
 
 ## Seed Data
@@ -60,6 +65,42 @@ export const plantsObj = { 1: plant1, 2: plant2, 3: plant3, 4: plant4 };
 
 ### HTML
 
+- body
+  - header
+    - h1 Super Watering World
+    - button WATER EVERYTHING
+  - main
+    - section
+      - h1 List of plants
+      - ul
+        - li (background red/green if well watered or not)
+          - h1 Name of plant
+          - h2 Type - Last Watered Date
+          - button WATER
+
 ### Components
 
+- App
+  - Header
+  - PlantList
+    - PlantListItem
+
 ### Component Data
+
+State: Current situation / condition of your data, who holds the state is responsible for it.
+Props:
+
+State of plants (array)
+-> waterPlantById (will affect state)
+-> waterEVERYTHING (will affect state)
+
+- App (S: plants{} P: null)
+  - Header (S: null P: waterEVERYTHING)
+  - PlantList (S: null P: plants[], waterPlantById )
+    - PlantListItem (S: null P: id, name, lastWatered, wateringInterval, waterPlantById)
+
+### Helper functions!
+
+```jsx
+// View helper.js file
+```
